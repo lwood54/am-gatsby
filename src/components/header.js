@@ -1,13 +1,18 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
+
+import cls from "./header.module.scss";
 
 const Header = () => {
       return (
             <div>
                   <nav>
+                        <h1>Logan Wood</h1>
                         <ul>
                               <li>
-                                    <Link to="/">Home</Link>
+                                    <Link to="/" className={cls.link}>
+                                          Home
+                                    </Link>
                               </li>
                               <li>
                                     <Link to="/contact">Contact</Link>
@@ -21,7 +26,7 @@ const Header = () => {
                         </ul>
                   </nav>
             </div>
-      )
-}
+      );
+};
 
-export default Header
+export default Header;
