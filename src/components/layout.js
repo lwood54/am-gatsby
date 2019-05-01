@@ -8,8 +8,10 @@ import cls from "./layout.module.scss";
 const Layout = ({ children }) => {
       return (
             <div className={cls.container}>
-                  <Header />
-                  {children}
+                  <div className={cls.content}>
+                        <Header />
+                        {children}
+                  </div>
                   <Footer />
             </div>
       );

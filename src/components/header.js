@@ -5,27 +5,49 @@ import cls from "./header.module.scss";
 
 const Header = () => {
       return (
-            <div>
+            <header className={cls.header}>
+                  <h1>
+                        <Link className={cls.title} to="/">
+                              Logan Wood
+                        </Link>
+                  </h1>
                   <nav>
-                        <h1>Logan Wood</h1>
-                        <ul>
+                        <ul className={cls.navList}>
                               <li>
-                                    <Link to="/" className={cls.link}>
+                                    <Link
+                                          to="/"
+                                          className={cls.navItem}
+                                          activeClassName={cls.activeNavItem}
+                                    >
                                           Home
                                     </Link>
                               </li>
                               <li>
-                                    <Link to="/contact">Contact</Link>
+                                    <Link
+                                          to="/contact"
+                                          className={cls.navItem}
+                                          activeClassName={cls.activeNavItem}
+                                    >
+                                          Contact
+                                    </Link>
                               </li>
                               <li>
-                                    <Link to="/blog">Blog</Link>
+                                    <Link
+                                          to="/blog"
+                                          className={cls.navItem}
+                                          activeClassName={cls.activeNavItem}
+                                    >
+                                          Blog
+                                    </Link>
                               </li>
                               <li>
-                                    <Link to="/about">About Me</Link>
+                                    <Link to="/about" className={cls.navItem}>
+                                          About Me
+                                    </Link>
                               </li>
                         </ul>
                   </nav>
-            </div>
+            </header>
       );
 };
 
