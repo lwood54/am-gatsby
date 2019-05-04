@@ -16,3 +16,39 @@ module.exports.onCreateNode = ({ node, actions }) => {
             });
       }
 };
+
+module.exports.createPages = async ({ graphql, actions }) => {
+      const { createPage } = actions;
+
+      // get path to template
+      const blogTemplate = path.resolve("./src/templates/blog.js");
+
+      // get markdown data
+      // this graphql is similar, but not the same as we used in our pages with useStaticQuery
+      // here, graphql is a function that we pass the query to as a template string
+      // this function returns a promise, so set up async/await
+      const res = await graphql(`
+            query {
+                  allMarkdownRemark {
+                        edges {
+                              node {
+                                    fields {
+                                          slug
+                                    }
+                              }
+                        }
+                  }
+            }
+      `);
+
+      // create new pages
+      res.data.allMarkdownRemark.edges.forEach(edge => {
+            createPage({
+                  component: blogTemplate,
+                  path: `/blog/${edge.node.fields.slug}`,
+                  context: {
+                        slug: edge.node.fields.slug
+                  }
+            });
+      });
+};
