@@ -25,3 +25,16 @@
       - use that to as one of values for keys inside object argument for createNodeField()
 3. create folder for templates to use
 4. create template file that will be used to handle data collected from the created node that uses the slug
+
+## Using Images
+
+1. save an image into the desired directory (best Gatsby practice is to create an image directory, then organize it)
+2. to add images to a markdown file:
+
+- ![alt text](./relative_file_path.jpg)
+
+3. Install a few plugins for processing images: (there are many options, but these are being used in this project)
+      - gatsby-plugin-sharp (allows use of sharp library insid Gatsby site)
+      - gatsby-remark-images (allows use of images inside markdown posts)
+      - gatsby-remark-relative-images (allows the sourcing of images relative to the markdown file)
+4. check Gatsby.js site or gatsby-config.js file to see how config had to be adjusted to use the images
