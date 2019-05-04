@@ -8,3 +8,10 @@
            - NOW: "develop": "env-cmd .env.development gatsby develop",
 4. instead of running "gatsby develop", you need to run "npm run develop"
 5. go to --> http://localhost:8000/___graphql
+
+## To use Markdown Files
+
+1. install gatsby-source-filesystem (to enable gatsby to access project file system)
+2. update gatsby-config.js plugins
+3. install gatsby-transformer-remark (to parse markdown files)
+4. update gatsby-config.js plugins
